@@ -14,7 +14,7 @@ before_install:
 - cd ..
 
 script:
-- docker run -t -v $TRAVIS_BUILD_DIR/fubuki:/input -v $TRAVIS_BUILD_DIR/website:/output -u $(id -u):$(id -g) thumbsupgallery/thumbsup thumbsup --input /input --output /output
+- docker run -t -v $TRAVIS_BUILD_DIR/fubuki:/input -v $TRAVIS_BUILD_DIR/website:/output -u $(id -u):$(id -g) thumbsupgallery/thumbsup thumbsup --input /input --output /output --title "白上吹雪表情包" --footer "Made with 🌽 by Copper / <a href=\"https://1drv.ms/u/s!Ah7V4-VT7CkBg79Na9EkE38n8Xkihg?e=WO1XgA\" target=\"_blank\">OneDrive</a> / <a href=\"https://github.com/copperion/fubuki-stickers\" target=\"_blank\">GitHub</a> / Powered by thumbsup"
 
 deploy:
   provider: pages

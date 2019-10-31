@@ -1,5 +1,7 @@
 # Fubuki Stickers
 
+![Tracis CI](https://www.travis-ci.com/copperion/fubuki-stickers.svg?branch=master)
+
 这里是收集白上吹雪表情包的仓库
 
 URL: https://fbk.copperion.com
