@@ -1,6 +1,7 @@
 # Fubuki Stickers
 
 ![Tracis CI](https://www.travis-ci.com/copperion/fubuki-stickers.svg?branch=master)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b9d59878-889a-4719-9a92-ab9d27a42c1f/deploy-status)](https://app.netlify.com/sites/fubuki-stickers/deploys)
 
 这里是收集白上吹雪表情包的仓库
 
