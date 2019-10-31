@@ -14,12 +14,12 @@ before_install:
 - cd ..
 
 script:
-- docker run -t -v 'pwd'/fubuki:/input -v 'pwd'/website:/output -u $(id -u):$(id -g) thumbsupgallery/thumbsup thumbsup --input /input --output /output
+- docker run -t -v $TRAVIS_BUILD_DIR/fubuki:/input -v $TRAVIS_BUILD_DIR/website:/output -u $(id -u):$(id -g) thumbsupgallery/thumbsup thumbsup --input /input --output /output
 
 deploy:
   provider: pages
+  local_dir: website
+  target_branch: website
   skip_cleanup: true
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
-  on:
-    branch: website
