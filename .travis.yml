@@ -1,0 +1,25 @@
+language: bash
+services:
+  - docker
+sudo: required
+branches:
+  only:
+    - master
+
+before_install:
+- mkdir website
+- docker pull thumbsupgallery/thumbsup
+- cd fubuki
+- md5sum * | sed -e 's/\([^ ]*\) \(.*\(\..*\)\)$/mv -v \2 \1\3/' | sh
+- cd ..
+
+script:
+- docker run -t -v 'pwd'/fubuki:/input -v 'pwd'/website:/output -u $(id -u):$(id -g) thumbsupgallery/thumbsup thumbsup --input /input --output /output
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: website
