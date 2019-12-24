@@ -23,3 +23,13 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
+
+after_deploy:
+# Deploy to Coding.net Manually
+- cd website
+- git init
+- git config user.name "Yutao Gu"
+- git config user.email "copperion@outlook.com"
+- git add .
+- git commit -m "TravisCI Build $TRAVIS_BUILD_NUMBER"
+- git push --force --quiet "https://CcoRMLeNqi:${CODING_TOKEN}@e.coding.net/copperion/fubuki-stickers.git" master:master
